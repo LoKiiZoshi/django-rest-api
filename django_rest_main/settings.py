@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # Already added
     'api',  # Add this line  
-    'products', 
     'school',
     'company', 
+    'products',
     ]
 
 MIDDLEWARE = [
