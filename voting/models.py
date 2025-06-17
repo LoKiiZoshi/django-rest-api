@@ -60,6 +60,6 @@ class Vote(models.Model):
         unique_together = ['user', 'choice']
     
     def __str__(self):
-        return f"{self.user.username} voted for {self.choice.text}"from django.db import models
+        return f"{self.user.username} voted for {self.choice.text}"
 
-# Create your models here.
+
