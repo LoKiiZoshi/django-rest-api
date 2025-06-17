@@ -17,13 +17,35 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from rest_framework.routers import DefaultRouter
+from voting.views import PollViewSet, VoteViewSet, ResultViewSet
+
+# Custom Auto Router
+router = DefaultRouter()
+router.register(r'polls', PollViewSet, basename='poll')
+router.register(r'votes', VoteViewSet, basename='vote')
+router.register(r'results', ResultViewSet, basename='result')
+
+
+
+# Custom Auto Router
+router = DefaultRouter()
+router.register(r'polls', PollViewSet, basename='poll')
+router.register(r'votes', VoteViewSet, basename='vote')
+router.register(r'results', ResultViewSet, basename='result')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('api/', include('school.urls')),
     path('api/', include('company.urls')),
     path('api/', include('products.urls')),
-     path('api/v1/', include('library_api.urls')),     
+     path('api/v1/', include('library_api.urls')),
+     
+     
+    path('api/v1/', include(router.urls)),
+    path('api/v1/voting/', include('voting.urls')),
+    path('api-auth/', include('rest_framework.urls')),     
  
 ]
   

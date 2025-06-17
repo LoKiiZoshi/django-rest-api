@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'school',
     'company', 
     'products',
+    'voting',
 
     
     ]
