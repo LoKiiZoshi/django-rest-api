@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path,include
 
 from rest_framework.routers import DefaultRouter
@@ -45,7 +46,17 @@ urlpatterns = [
      
     path('api/v1/', include(router.urls)),
     path('api/v1/voting/', include('voting.urls')),
-    path('api-auth/', include('rest_framework.urls')),     
+    path('api-auth/', include('rest_framework.urls')),    
+    
+    
+    # Authentication
+    path('api/auth/token/', obtain_auth_token, name='api_token_auth'),
+    
+    # Student app URLs
+    path('', include('students.urls')),
+    
+    # DRF Browsable API
+    path('api-auth/', include('rest_framework.urls')), 
  
 ]
   
