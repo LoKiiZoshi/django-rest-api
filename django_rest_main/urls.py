@@ -62,7 +62,7 @@ urlpatterns = [
     
     
     
-   path('api/', include('banking.urls')),
+   path('api/', include('banking_api.urls')),
  
 ]
   
