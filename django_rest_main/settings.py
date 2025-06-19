@@ -38,11 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',  # Already added
+    'django_filters',
+    'students', 
+     
     'api',  # Add this line  
     'school',
     'company', 
     'products',
     'voting',
+    'library_api',
+    
+    
+    
 
     
     ]
