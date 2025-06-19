@@ -59,6 +59,10 @@ urlpatterns = [
     
     # DRF Browsable API
     path('api-auth/', include('rest_framework.urls')), 
+    
+    
+    
+   path('api/', include('banking.urls')),
  
 ]
   
