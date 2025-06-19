@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'products',
     'voting',
     'library_api',
+    'banking_api',
     
     
     
