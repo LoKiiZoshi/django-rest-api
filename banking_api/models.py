@@ -6,7 +6,6 @@ class Account(models.Model):
     ACCOUNT_TYPES = (
         ('SAVINGS', 'Savings'),
         ('CHECKING', 'Checking'),
-    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='accounts')
     account_number = models.CharField(max_length=20, unique=True)
     account_type = models.CharField(max_length=20, choices=ACCOUNT_TYPES)
